@@ -49,6 +49,6 @@ const routes = [
   { path: '/:pathMatch(.*)*', name: '404', component: () => import('./404Page.vue') },
 ];
 
-const router = createRouter({ routes, history: createWebHistory(), strict: true });
+const router = createRouter({ routes, history: createWebHistory('/ecwid-test'), strict: true });
 
 export default router;

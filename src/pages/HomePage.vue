@@ -6,9 +6,9 @@
   </div>
 
   <a-descriptions title="Store Info">
-    <a-descriptions-item label="Store Name">{{ store.profile.settings.storeName }}</a-descriptions-item>
-    <a-descriptions-item label="Email">{{ store.profile.company.email }}</a-descriptions-item>
-    <a-descriptions-item label="Country Code">{{ store.profile.company.countryCode }}</a-descriptions-item>
+    <a-descriptions-item label="Store Name">{{ store.profile.settings?.storeName }}</a-descriptions-item>
+    <a-descriptions-item label="Email">{{ store.profile.company?.email }}</a-descriptions-item>
+    <a-descriptions-item label="Country Code">{{ store.profile.company?.countryCode }}</a-descriptions-item>
   </a-descriptions>
 </template>
 
