@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import eslint from '@nabla/vite-plugin-eslint';
 
 export default defineConfig({
+  base: '/ecwid-test/',
   resolve: {
     alias: {
       '@app': resolve(__dirname, 'src'),
