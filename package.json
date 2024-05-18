@@ -1,0 +1,61 @@
+{
+  "name": "ecwid-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "build": "vite build",
+    "build:no-cache": "pnpm clean:cache && pnpm build",
+    "preview": "pnpm build && vite preview",
+    "preview:dist": "vite preview",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "clean:cache": "rm -rf node_modules/.cache/ && rm -rf node_modules/.vite",
+    "clean:lib": "rm -rf node_modules",
+    "lint": "run-s lint:all:*",
+    "lint:js": "eslint --fix",
+    "lint:all:js": "eslint --fix --cache \"**/*.{js,jsx,ts,tsx}\" --cache-location node_modules/.cache/eslint/",
+    "format": "prettier --write --loglevel warn",
+    "format:all": "pnpm format \"src/**/*.+(js|jsx|ts|tsx|json|css|html|md)\"",
+    "update:deps": "pnpm update -i -L",
+    "update:cssdb": "pnpm -s dlx update-browserslist-db@latest",
+    "reinstall": "rm -rf node_modules && pnpm i"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "ant-design-vue": "^4.2.1",
+    "ky": "^1.2.4",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "vue": "^3.4.25",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@nabla/vite-plugin-eslint": "^2.0.4",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.1.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-perfectionist": "^2.10.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.25.0",
+    "nano-staged": "^0.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vitest": "^1.5.2",
+    "vue-eslint-parser": "^9.4.2",
+    "vue-tsc": "^2.0.14"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged"
+  }
+}
