@@ -9,13 +9,13 @@
           <a-button @click="onRemove(item.product.id)" danger>Remove</a-button>
         </template>
 
-        <a-list-item-meta :class="$style.itemMetaWrapper">
+        <a-list-item-meta>
           <template #title>
             {{ item.product.name }}
           </template>
 
           <template #avatar>
-            <img :class="$style.image" :src="item.product.smallThumbnailUrl" />
+            <img :alt="item.product.seoTitle" :class="$style.image" :src="item.product.smallThumbnailUrl" />
           </template>
         </a-list-item-meta>
 

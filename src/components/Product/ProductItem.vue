@@ -4,7 +4,7 @@
       <div :class="$style.carouselWrapper">
         <a-carousel arrows dots-class="slick-dots slick-thumb">
           <template #customPaging="props">
-            <img :src="images[props.i]" />
+            <img :alt="`${name}_${props.i}`" :src="images[props.i]" />
           </template>
           <div :key="id" v-for="(image, id) of images">
             <img :src="image" />

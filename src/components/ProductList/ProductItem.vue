@@ -1,7 +1,7 @@
 <template>
   <a-card :class="$style.cardWrapper" hoverable>
     <template #cover>
-      <a-image :alt="product.seoDescription" :preview="false" :src="product.imageUrl" placeholder />
+      <a-image :alt="product.seoTitle" :preview="false" :src="product.imageUrl" placeholder />
     </template>
     <template #actions>
       <a-button @click.stop="onBuyClick" type="primary">Buy</a-button>
