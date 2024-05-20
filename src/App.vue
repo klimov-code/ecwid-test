@@ -1,7 +1,16 @@
 <template>
   <a-app>
-    <a-layout-header :class="$style.header"><Header /></a-layout-header>
-    <a-layout-content><router-view /></a-layout-content>
+    <a-layout-header :class="$style.header">
+      <Header />
+    </a-layout-header>
+
+    <a-layout-content>
+      <router-view v-slot="{ Component }">
+        <keep-alive :include="['ProductsPage']">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+    </a-layout-content>
   </a-app>
 </template>
 
