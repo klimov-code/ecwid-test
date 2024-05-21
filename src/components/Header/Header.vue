@@ -1,6 +1,8 @@
 <template>
   <a-flex align="center" justify="space-between">
-    <a-typography-title :level="3">Store</a-typography-title>
+    <router-link :to="{ name: 'products' }">
+      <a-typography-title :level="3">Store</a-typography-title>
+    </router-link>
 
     <router-link :to="{ name: 'cart' }">
       <a-badge :count="store.count">
