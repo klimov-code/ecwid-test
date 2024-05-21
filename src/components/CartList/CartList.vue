@@ -1,6 +1,6 @@
 <template>
-  <a-list :data-source="list" item-layout="horizontal" size="large">
-    <template #renderItem="{ item }">
+  <a-list :data-source="store.cartList" item-layout="horizontal" size="large">
+    <template #renderItem="{ item }: { item: CartItem }">
       <a-list-item :key="item.product.id">
         <template #actions>
           <a-button @click="onIncrement(item.product.id)" type="primary">+</a-button>
@@ -34,30 +34,21 @@
 </template>
 
 <script lang="ts" setup>
+import { useShoppingCartStore } from '@app/store';
 import { CartItem } from '#types/cart';
 
-const emit = defineEmits<{
-  (event: 'decrement', id: number): void;
-  (event: 'increment', id: number): void;
-  (event: 'remove', id: number): void;
-}>();
-
-defineProps({
-  list: {
-    type: Array as () => CartItem[],
-  },
-});
+const store = useShoppingCartStore();
 
 function onIncrement(id: number) {
-  emit('increment', id);
+  store.incrementCount(id);
 }
 
 function onDecrement(id: number) {
-  emit('decrement', id);
+  store.decrementCount(id);
 }
 
 function onRemove(id: number) {
-  emit('remove', id);
+  store.removeFromCart(id);
 }
 </script>
 

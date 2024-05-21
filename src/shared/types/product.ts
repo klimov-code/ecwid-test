@@ -273,6 +273,7 @@ interface Product {
   outOfStockVisibilityBehaviour: string;
   minPurchaseQuantity: number;
   maxPurchaseQuantity: number;
+  smallThumbnailUrl: string;
 }
 
 interface ProductSearchResult {

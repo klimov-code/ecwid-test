@@ -27,3 +27,5 @@ pnpm start
 - Upgrade route patterns and describe route guards
 - Upgrade project structure
 - Separate the logic layer from the ui layer
+- Make the interface more responsive
+- Add more accessibility
